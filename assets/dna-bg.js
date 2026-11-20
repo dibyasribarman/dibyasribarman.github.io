@@ -6,10 +6,21 @@
     data-target : (fill mode) selector of the element that hosts the canvas, e.g. ".hero"
     data-rgb    : base colour "r,g,b";  data-hl : highlight colour when the pointer is near
     data-alpha  : overall opacity multiplier (default 1)
+    data-rgb-dark, data-hl-dark : optional colours for dark mode
 */
 (function () {
   const me = document.currentScript, d = me.dataset;
-  const mode = d.mode || 'margins', RGB = d.rgb || '37,99,235', HL = d.hl || '14,165,233', A = +(d.alpha || 1);
+  const mode = d.mode || 'margins', A = +(d.alpha || 1);
+  // data-rgb-dark / data-hl-dark: optional colours used when the system is in dark mode
+  const darkMq = matchMedia('(prefers-color-scheme: dark)');
+  let RGB, HL;
+  const pickColours = () => {
+    const dark = darkMq.matches;
+    RGB = (dark && d.rgbDark) || d.rgb || '37,99,235';
+    HL = (dark && d.hlDark) || d.hl || '14,165,233';
+  };
+  pickColours();
+  darkMq.addEventListener && darkMq.addEventListener('change', pickColours);
   const MIN_DESKTOP = 1100, MIN_ZONE = 110;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
