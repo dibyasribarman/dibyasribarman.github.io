@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alex Morgan — Classic</title>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --accent:#1d4ed8; --hover:#0ea5e9; --text:#1e2330; --muted:#6b7280; --bg:#fcfcfa; --hl:#eff6ff; --line:#ececec; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:'Inter',sans-serif; font-size:15px; color:var(--text); background:var(--bg); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; transition:color .15s; }
+  a:hover { color:var(--hover); }
+  .wrap { max-width:880px; margin:0 auto; padding:70px 26px 60px; }
+  header { display:flex; gap:48px; align-items:center; margin-bottom:20px; }
+  header .bio { flex:1; }
+  h1 { font-family:'Newsreader',serif; font-size:46px; font-weight:400; margin:0 0 4px; letter-spacing:-.02em; }
+  .sub { font-family:'Newsreader',serif; font-style:italic; color:var(--muted); font-size:19px; margin:0 0 18px!important; }
+  header p { margin:0 0 12px; color:#374151; }
+  .links { margin-top:20px; display:flex; flex-wrap:wrap; gap:8px; }
+  .links a { font-size:13px; font-weight:500; padding:6px 14px; border:1px solid var(--line); border-radius:999px; background:#fff; color:var(--text); transition:.2s; }
+  .links a:hover { border-color:var(--accent); color:var(--accent); transform:translateY(-1px); }
+  .photo { position:relative; }
+  .photo::after { content:""; position:absolute; inset:-10px; border:1.5px dashed #93c5fd; border-radius:50%; animation:spin 60s linear infinite; }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .photo img { width:220px; height:220px; border-radius:50%; object-fit:cover; display:block; box-shadow:0 20px 40px -18px rgba(29,78,216,.45); }
+  h2 { font-family:'Newsreader',serif; font-size:28px; font-weight:400; margin:54px 0 14px; padding-bottom:8px; border-bottom:1px solid var(--line); letter-spacing:-.01em; display:flex; align-items:center; gap:12px; }
+  h2::before { content:""; width:14px; height:26px; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 40'%3E%3Cg fill='none' stroke='%231d4ed8' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M4 2c0 9 16 9 16 18S4 29 4 38'/%3E%3Cpath d='M20 2c0 9-16 9-16 18s16 9 16 18' opacity='.45'/%3E%3Cpath d='M7 8h10M7 32h10M9 20h6' opacity='.5'/%3E%3C/g%3E%3C/svg%3E") no-repeat center/contain; }
+  .intro { margin:0 0 18px; color:#374151; }
+  .news { list-style:none; padding:0; margin:0; }
+  .news li { padding:6px 0; }
+  .news .date { display:inline-block; width:86px; font-weight:600; color:var(--accent); font-size:13px; }
+  .paper { display:flex; gap:28px; padding:20px 16px; border-radius:14px; margin:6px -16px; transition:background .25s, box-shadow .25s; }
+  .paper:hover { background:#fff; box-shadow:0 10px 30px -14px rgba(0,0,0,.18); }
+  .paper.featured { background:var(--hl); }
+  .paper .thumb { flex:0 0 190px; overflow:hidden; border-radius:10px; align-self:flex-start; }
+  .paper .thumb img { width:190px; display:block; transition:transform .5s; }
+  .paper:hover .thumb img { transform:scale(1.06); }
+  .paper .title { font-family:'Newsreader',serif; font-size:20px; font-weight:500; display:block; margin-bottom:4px; line-height:1.3; color:var(--text); }
+  .paper .title:hover { color:var(--accent); }
+  .paper .authors { margin:0; font-size:14px; color:#4b5563; }
+  .paper .authors strong { color:var(--text); font-weight:600; }
+  .paper .venue { font-style:italic; margin:2px 0; font-size:14px; color:var(--muted); }
+  .paper .badge { font-style:normal; color:#0369a1; font-weight:600; }
+  .paper .plinks { margin:4px 0 6px; font-size:13.5px; }
+  .paper p.desc { margin:6px 0 0; color:#4b5563; font-size:14px; }
+  .list { margin:0; padding-left:20px; color:#374151; }
+  footer { text-align:center; color:var(--muted); font-size:13px; margin-top:60px; }
+  @media(max-width:700px){ header{flex-direction:column-reverse;} .paper{flex-direction:column;} .paper .thumb, .paper .thumb img{width:100%;} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="bio">
+      <h1>Alex Morgan</h1>
+      <p class="sub">Biomedical Engineer · Tissue Engineering &amp; Cell Biology</p>
+      <p>I'm a research scientist at <a href="#">Example Institute for Bioengineering</a>, where I engineer living tissues and build tools to see, measure and steer how cells behave.</p>
+      <p>I did my PhD at <a href="#">University of Somewhere</a>, advised by <a href="#">Prof. Jane Doe</a>, and my undergrad at <a href="#">Institute of Technology</a>. I've interned at <a href="#">Example Biotech</a> and <a href="#">Marine Biology Lab</a>.</p>
+      <div class="links">
+        <a href="#">Email</a><a href="#">CV</a><a href="#">Google Scholar</a><a href="#">GitHub</a><a href="#">Twitter</a>
+      </div>
+    </div>
+    <div class="photo"><img src="assets/profile.svg" alt="Profile photo"></div>
+  </header>
+
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="date">Nov 2026</span> Two papers accepted in <b>Nature Biotechnology</b> and <b>Cell</b>.</li>
+    <li><span class="date">Sep 2026</span> Invited talk at the <a href="#">Gordon Research Conference on Biomaterials</a>.</li>
+    <li><span class="date">Jul 2026</span> <a href="#">Live-Cell Segmentation</a> received an <b>Rising Star Award</b> from BMES.</li>
+    <li><span class="date">Mar 2026</span> Joined Example Institute for Bioengineering as a Research Scientist.</li>
+  </ul>
+
+  <h2>Research</h2>
+  <p class="intro">I'm interested in tissue engineering, mechanobiology, and quantitative cell imaging. Most of my research is about building human-relevant models of disease, from organoids on chips to computational tools that read cells under the microscope. Representative papers are <span style="background:var(--hl);padding:0 4px">highlighted</span>.</p>
+
+  <div class="paper featured">
+    <div class="thumb"><img src="assets/paper1.svg" alt=""></div>
+    <div>
+      <a class="title" href="#">Engineered Organoids for High-Throughput Drug Screening</a>
+      <p class="authors"><strong>Alex Morgan</strong>, Sam Lee, Priya Nair, Jane Doe</p>
+      <p class="venue">Nature Biomedical Engineering, 2026 &nbsp;<span class="badge">(Cover Article)</span></p>
+      <div class="plinks"><a href="#">project page</a> / <a href="#">arXiv</a> / <a href="#">code</a></div>
+      <p class="desc">Patient-derived liver organoids grown on a microfluidic chip predict drug toxicity better than 2D culture or animal models.</p>
+    </div>
+  </div>
+  <div class="paper featured">
+    <div class="thumb"><img src="assets/paper2.svg" alt=""></div>
+    <div>
+      <a class="title" href="#">Deep Learning Segmentation of Live-Cell Microscopy</a>
+      <p class="authors">Chen Wu, <strong>Alex Morgan</strong>, Maria Gomez</p>
+      <p class="venue">Nature Methods, 2026 &nbsp;<span class="badge">(Rising Star Award)</span></p>
+      <div class="plinks"><a href="#">project page</a> / <a href="#">arXiv</a> / <a href="#">video</a></div>
+      <p class="desc">A self-supervised segmentation model that tracks single cells across days of time-lapse fluorescence imaging.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="thumb"><img src="assets/paper3.svg" alt=""></div>
+    <div>
+      <a class="title" href="#">Mechanobiology of Stem Cell Fate on Soft Hydrogels</a>
+      <p class="authors"><strong>Alex Morgan</strong>, Tom Becker</p>
+      <p class="venue">PNAS, 2026</p>
+      <div class="plinks"><a href="#">arXiv</a> / <a href="#">code</a></div>
+      <p class="desc">Tuning hydrogel stiffness steers mesenchymal stem cells toward bone or fat lineages through YAP signaling.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="thumb"><img src="assets/paper4.svg" alt=""></div>
+    <div>
+      <a class="title" href="#">CRISPR-Based Biosensors for Point-of-Care Diagnostics</a>
+      <p class="authors">Priya Nair, <strong>Alex Morgan</strong>, Jane Doe</p>
+      <p class="venue">Science Advances, 2025</p>
+      <div class="plinks"><a href="#">paper</a> / <a href="#">dataset</a></div>
+      <p class="desc">A paper-strip Cas12 assay that detects viral RNA in 20 minutes with no lab equipment.</p>
+    </div>
+  </div>
+  <div class="paper">
+    <div class="thumb"><img src="assets/paper5.svg" alt=""></div>
+    <div>
+      <a class="title" href="#">Protein Language Models for Enzyme Design</a>
+      <p class="authors"><strong>Alex Morgan</strong>, Sam Lee</p>
+      <p class="venue">Cell Systems, 2025</p>
+      <div class="plinks"><a href="#">arXiv</a> / <a href="#">code</a></div>
+      <p class="desc">Protein language models fine-tuned on directed-evolution data design enzymes with 8× higher activity.</p>
+    </div>
+  </div>
+
+  <h2>Service &amp; Teaching</h2>
+  <ul class="list">
+    <li>Editorial Board, Biomaterials; Program Committee, BMES 2026</li>
+    <li>Reviewer, Nature BME, Cell Stem Cell, Lab on a Chip, PNAS</li>
+    <li>Teaching Assistant, BME 210: Cell &amp; Tissue Engineering, 2022</li>
+  </ul>
+
+  <footer>Design inspired by classic academic homepages. Last updated Nov 2026.</footer>
+</div>
+<script src="assets/dna-bg.js" data-avoid=".wrap" data-rgb="37,99,235" data-hl="14,165,233"></script>
+</body>
+</html>
